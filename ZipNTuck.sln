@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1169
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipNTuck.UI.MVC", "ZipNTuck.UI.MVC\ZipNTuck.UI.MVC.csproj", "{B5CB62E1-C86D-4056-AE17-34478F5F9C59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipNTuck.Data.EF", "ZipNTuck.Data.EF\ZipNTuck.Data.EF.csproj", "{C702F846-4CDC-41A4-9348-02AD680BB191}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B5CB62E1-C86D-4056-AE17-34478F5F9C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5CB62E1-C86D-4056-AE17-34478F5F9C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5CB62E1-C86D-4056-AE17-34478F5F9C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C702F846-4CDC-41A4-9348-02AD680BB191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C702F846-4CDC-41A4-9348-02AD680BB191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C702F846-4CDC-41A4-9348-02AD680BB191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C702F846-4CDC-41A4-9348-02AD680BB191}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
