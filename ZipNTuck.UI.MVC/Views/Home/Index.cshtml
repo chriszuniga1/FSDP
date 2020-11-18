@@ -1,35 +1,170 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<main>
+    <!--? slider Area Start-->
+    <div class="slider-area  position-relative ">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider position-relative hero-overly slider-height  d-flex align-items-center" data-background="/Content/assets/img/hero/h1_hero.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="hero-caption">
+                                <img class="rotateme" src="~/Content/assets/img/hero/hero-icon.png" alt="" data-animation="zoomIn" data-delay="1s">
+                                <h1 data-animation="fadeInLeft" data-delay=".4s">We make cloths  that suit you</h1>
+                                <p data-animation="fadeInLeft" data-delay=".6s">
+                                    TLorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Suspendisse varius enim in eros elementum tristique. Duis
+                                    cursus, mi quis viverra ornare.
+                                </p>
+                                <!-- Hero Btn -->
+                                <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".8s">Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left img -->
+                <div class="hero-img">
+                    <img src="~/Content/assets/img/hero/h1_hero1.png" alt="" data-animation="fadeInRight" data-transition-duration="5s">
+                </div>
+            </div>
+            <!-- Single Slider -->
+            <div class="single-slider position-relative hero-overly slider-height  d-flex align-items-center" data-background="/Content/assets/img/hero/h1_hero.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="hero-caption">
+                                <img class="rotateme" src="~/Content/assets/img/hero/hero-icon.png" alt="" data-animation="zoomIn" data-delay="1s">
+                                <h1 data-animation="fadeInLeft" data-delay=".4s">We make cloths  that suit you</h1>
+                                <p data-animation="fadeInLeft" data-delay=".6s">
+                                    TLorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Suspendisse varius enim in eros elementum tristique. Duis
+                                    cursus, mi quis viverra ornare.
+                                </p>
+                                <!-- Hero Btn -->
+                                <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".8s">Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left img -->
+                <div class="hero-img">
+                    <img src="~/Content/assets/img/hero/h1_hero1.png" alt="" data-animation="fadeInRight" data-transition-duration="5s">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End-->
+    <!--? Clients Offers Start -->
+    <div class="clients-area section-padding40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="offers-img">
+                            <img src="~/Content/assets/img/gallery/offers1.png" alt="">
+                        </div>
+                        <div class="offers-cap">
+                            <span>1</span>
+                            <h3><a href="services.html">Tailor Sweing</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="offers-img">
+                            <img src="~/Content/assets/img/gallery/offers2.png" alt="">
+                        </div>
+                        <div class="offers-cap">
+                            <span>2</span>
+                            <h3><a href="services.html">Mesurement</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="offers-img">
+                            <img src="~/Content/assets/img/gallery/offers3.png" alt="">
+                        </div>
+                        <div class="offers-cap">
+                            <span>3</span>
+                            <h3><a href="services.html">Ready-made</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Clients Offers End -->
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
-
+    <!--? Services Area Start -->
+    <section class="categories-area section-padding40">
+        <div class="container">
+            <!-- section Tittle -->
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-6 col-md-7 col-sm-9">
+                    <div class="section-tittle text-center mb-60">
+                        <h2>Why use our service?</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="cat-icon">
+                            <img src="~/Content/assets/img/icon/services1.svg" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5>Tailor Sweing</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="cat-icon">
+                            <img src="~/Content/assets/img/icon/services2.svg" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5>Tailor Sweing</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                        <div class="cat-icon">
+                            <img src="~/Content/assets/img/icon/services3.svg" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5>Tailor Sweing</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                        <div class="cat-icon">
+                            <img src="~/Content/assets/img/icon/services4.svg" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5>Tailor Sweing</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--? Services Area End -->
+   
+</main>
 
 
 

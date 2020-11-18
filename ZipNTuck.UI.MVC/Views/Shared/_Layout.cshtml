@@ -1,49 +1,205 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest"> 
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/assets/img/favicon.ico">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/slicknav.css">
+    <link rel="stylesheet" href="~/Content/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/Content/assets/css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="~/Content/assets/css/gijgo.css">
+    <link rel="stylesheet" href="~/Content/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/animated-headline.css">
+    <link rel="stylesheet" href="~/Content/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/assets/css/slick.css">
+    <link rel="stylesheet" href="~/Content/assets/css/nice-select.css">
+    <link rel="stylesheet" href="~/Content/assets/css/style.css">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin")) {
-                        <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-                        <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-                    }
-                </ul>
-                @Html.Partial("_LoginPartial")
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="~/Content/assets/img/logo/loder.png" alt="">
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <!-- Preloader Start-->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header_area">
+            <div class="main-header">
+                <div class="header-bottom header-sticky">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="@Url.Action("Index", "Home")"><img src="~/Content/assets/img/logo/logo.png" alt=""></a>
+                    </div>
+                    <div class="header-left  d-flex f-right align-items-center">
+                        <!-- Main-menu -->
+                        <div class="main-menu f-right d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                    @*<li><a href="index.html">Home</a></li>*@
+
+                                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                                    @*<li><a href="about.html">About</a></li>*@
+
+                                    @*<li><a href="services.html">Services</a></li>*@
+
+                                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                                    @*<li><a href="contact.html">Contact</a></li>*@
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- left Btn -->
+                        <div class="header-right-btn f-right d-none d-lg-block  ml-30">
+                            <a href="#" class="header-btn">Visit Us</a> <!--KEEP OR NOT???????-->
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    
+    <!--Main content cut and pasted in Index.cshtml-->
+    @RenderBody()
+    <footer>
+        <div class="footer-wrapper section-bg2 pl-100" data-background="/Content/assets/img/gallery/footer-bg.png">
+            <!-- Footer Start-->
+            <div class="footer-area footer-padding">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <!-- logo -->
+                                    <div class="footer-logo mb-35">
+                                        <a href="@Url.Action("Index", "Home")"><img src="~/Content/assets/img/logo/logo2_footer.png" alt=""></a>
+                                    </div>
+                                    <div class="footer-tittle">
+                                        <div class="footer-pera">
+                                            <p>
+                                                Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing.
+                                            </p>
+                                        </div>
+                                        <ul class="mb-40">
+                                            <li class="number"><a href="#">(80) 783 367-3904</a></li>
+                                            <li class="number2"><a href="#">(80) 783 367-3904</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- social -->
+                                    <div class="footer-social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Our solutions</h4>
+                                    <ul>
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom area -->
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-12 ">
+                                <div class="footer-copy-right text-right">
+                                    <p>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        Copyright &copy;
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End-->
+            <!-- Map -->
+            <div class="map-area">
+                <img src="~/Content/assets/img/gallery/map.png" alt="">
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+    <!-- JS here -->
+    <script src="~/Content/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="~/Content/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/assets/js/popper.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="~/Content/assets/js/jquery.slicknav.min.js"></script>
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="~/Content/assets/js/owl.carousel.min.js"></script>
+    <script src="~/Content/assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="~/Content/assets/js/wow.min.js"></script>
+    <script src="~/Content/assets/js/animated.headline.js"></script>
+    <script src="~/Content/assets/js/jquery.magnific-popup.js"></script>
+    <!-- Date Picker -->
+    <script src="~/Content/assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="~/Content/assets/js/jquery.nice-select.min.js"></script>
+    <script src="~/Content/assets/js/jquery.sticky.js"></script>
+    <!-- Progress -->
+    <script src="~/Content/assets/js/jquery.barfiller.js"></script>
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="~/Content/assets/js/jquery.counterup.min.js"></script>
+    <script src="~/Content/assets/js/waypoints.min.js"></script>
+    <script src="~/Content/assets/js/jquery.countdown.min.js"></script>
+    <script src="~/Content/assets/js/hover-direction-snake.min.js"></script>
+    <!-- contact js -->
+    <script src="~/Content/assets/js/contact.js"></script>
+    <script src="~/Content/assets/js/jquery.form.js"></script>
+    <script src="~/Content/assets/js/jquery.validate.min.js"></script>
+    <script src="~/Content/assets/js/mail-script.js"></script>
+    <script src="~/Content/assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="~/Content/assets/js/plugins.js"></script>
+    <script src="~/Content/assets/js/main.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

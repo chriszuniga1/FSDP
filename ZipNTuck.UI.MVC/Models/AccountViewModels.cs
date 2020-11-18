@@ -64,6 +64,15 @@ namespace ZipNTuck.UI.MVC.Models
 
     public class RegisterViewModel
     {
+       //Added to allow users to enter custom details(First/Last name) when registering
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

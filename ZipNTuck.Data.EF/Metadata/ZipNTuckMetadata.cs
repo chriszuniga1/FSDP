@@ -17,7 +17,7 @@ namespace ZipNTuck.Data.EF
         [Display(Name = "Article Name")]
         public string ArticleName { get; set; }
 
-        //public string UserID { get; set; } 
+        public string UserID { get; set; } 
 
         [DisplayFormat(NullDisplayText = "Not Available")]
         public string ArticlePhoto { get; set; }
