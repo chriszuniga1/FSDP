@@ -44,7 +44,7 @@
                 <div class="header-bottom header-sticky">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="@Url.Action("Index", "Home")"><img src="~/Content/assets/img/logo/logo.png" alt=""></a>
+                        <a href="@Url.Action("Index", "Home")"><img src="~/Content/assets/img/logo/sewingmachine.png" alt=""></a>
                     </div>
                     <div class="header-left  d-flex f-right align-items-center">
                         <!-- Main-menu -->
@@ -62,12 +62,15 @@
 
                                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
                                     @*<li><a href="contact.html">Contact</a></li>*@
+
+                                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
                                 </ul>
                             </nav>
                         </div>
                         <!-- left Btn -->
                         <div class="header-right-btn f-right d-none d-lg-block  ml-30">
-                            <a href="#" class="header-btn">Visit Us</a> <!--KEEP OR NOT???????-->
+                            <a href="@Url.Action("Contact", "Home")" class="header-btn">Visit Us</a> <!--KEEP OR NOT???????-->
                         </div>
                     </div>
                     <!-- Mobile Menu -->
@@ -93,7 +96,7 @@
                                 <div class="single-footer-caption mb-30">
                                     <!-- logo -->
                                     <div class="footer-logo mb-35">
-                                        <a href="@Url.Action("Index", "Home")"><img src="~/Content/assets/img/logo/logo2_footer.png" alt=""></a>
+                                        <a href="@Url.Action("Index", "Home")"><img src="~/Content/assets/img/icon/services3.svg" alt=""></a>
                                     </div>
                                     <div class="footer-tittle">
                                         <div class="footer-pera">
@@ -121,11 +124,11 @@
                                 <div class="footer-tittle">
                                     <h4>Our solutions</h4>
                                     <ul>
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">About</a></li>
+                                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                        <li><a href="@Url.Action("About", "Home")">About</a></li>
                                         <li><a href="#">Services</a></li>
                                         <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -155,7 +158,8 @@
             <!-- Footer End-->
             <!-- Map -->
             <div class="map-area">
-                <img src="~/Content/assets/img/gallery/map.png" alt="">
+                <img src="~/Content/assets/img/gallery/legendsoutlets.png" alt="">
+                @*<img src="~/Content/assets/img/gallery/map.png" alt="">*@
             </div>
         </div>
     </footer>

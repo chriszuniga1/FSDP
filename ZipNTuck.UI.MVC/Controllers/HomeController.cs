@@ -11,7 +11,7 @@ namespace ZipNTuck.UI.MVC.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";

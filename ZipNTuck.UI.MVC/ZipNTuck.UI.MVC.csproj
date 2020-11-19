@@ -248,6 +248,8 @@
     <Content Include="Content\assets\img\gallery\footer_bg.png" />
     <Content Include="Content\assets\img\gallery\instra1.png" />
     <Content Include="Content\assets\img\gallery\instra2.png" />
+    <Content Include="Content\assets\img\gallery\legends.png" />
+    <Content Include="Content\assets\img\gallery\legendsoutlets.png" />
     <Content Include="Content\assets\img\gallery\map.png" />
     <Content Include="Content\assets\img\gallery\offers1.png" />
     <Content Include="Content\assets\img\gallery\offers2.png" />
@@ -265,6 +267,7 @@
     <Content Include="Content\assets\img\hero\hero2.png" />
     <Content Include="Content\assets\img\hero\map.png" />
     <Content Include="Content\assets\img\hero\overlay.png" />
+    <Content Include="Content\assets\img\hero\tapemeasure.jpg" />
     <Content Include="Content\assets\img\icon\heart.svg" />
     <Content Include="Content\assets\img\icon\icon.png" />
     <Content Include="Content\assets\img\icon\offers-icon1.png" />
@@ -284,6 +287,10 @@
     <Content Include="Content\assets\img\logo\logo.png" />
     <Content Include="Content\assets\img\logo\logo.svg" />
     <Content Include="Content\assets\img\logo\logo2_footer.png" />
+    <Content Include="Content\assets\img\logo\needle.jpg" />
+    <Content Include="Content\assets\img\logo\needle2.jpg" />
+    <Content Include="Content\assets\img\logo\needlethread.jpg" />
+    <Content Include="Content\assets\img\logo\sewingmachine.png" />
     <Content Include="Content\assets\img\post\next.png" />
     <Content Include="Content\assets\img\post\post_1.png" />
     <Content Include="Content\assets\img\post\post_10.png" />
