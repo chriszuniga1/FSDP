@@ -6,7 +6,7 @@
     <title>@ViewBag.Title</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest"> 
+    <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="~/Content/assets/img/favicon.ico">
     <!-- CSS here -->
     <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
@@ -53,24 +53,42 @@
                                 <ul id="navigation">
 
                                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                    @*<li><a href="index.html">Home</a></li>*@
 
                                     <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                                    @*<li><a href="about.html">About</a></li>*@
 
-                                    @*<li><a href="services.html">Services</a></li>*@
 
                                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                                    @*<li><a href="contact.html">Contact</a></li>*@
 
-                                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                                    @if (User.IsInRole("Admin") && Request.IsAuthenticated)
+                                    {
+                                        <li>
+                                            <ul>
+                                                <li><a href="@Url.Action("Index", "UsersAdmin")">User Admin</a></li>
+                                                <li><a href="@Url.Action("Index", "RolesAdmin")">Roles Admin</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+
+                                    @if ((User.IsInRole("Admin") || User.IsInRole("Employee") && Request.IsAuthenticated))
+                                    {
+                                        <li>
+                                            @*<span class="opener">Admin & Employee Features</span>*@
+                                            <ul>
+                                                <li><a href="@Url.Action("Index", "ArticlesOfClothings")">Customer Items</a></li>
+                                                <li><a href="@Url.Action("Index", "Locations")">Location</a></li>
+                                                <li><a href="@Url.Action("Index", "Reservations")">Reservation</a></li>
+                                                <li><a href="@Url.Action("Index", "UserDetails")">Customer Details</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+
+                                    @Html.Partial("_LoginPartial")
                                 </ul>
                             </nav>
                         </div>
                         <!-- left Btn -->
                         <div class="header-right-btn f-right d-none d-lg-block  ml-30">
-                            <a href="@Url.Action("Contact", "Home")" class="header-btn">Visit Us</a> <!--KEEP OR NOT???????-->
+                            <a href="@Url.Action("Contact", "Home")" class="header-btn">Visit Us</a> 
                         </div>
                     </div>
                     <!-- Mobile Menu -->
@@ -82,7 +100,7 @@
         </div>
         <!-- Header End -->
     </header>
-    
+
     <!--Main content cut and pasted in Index.cshtml-->
     @RenderBody()
     <footer>

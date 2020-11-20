@@ -14,7 +14,7 @@ namespace ZipNTuck.Data.EF
 
         [Required(ErrorMessage = " * Article Item Name is Required * ")]
         [StringLength(50, ErrorMessage = " * Item name cannot be longer than 50 characters * ")]
-        [Display(Name = "Article Name")]
+        [Display(Name = "Article of Clothing Name")]
         public string ArticleName { get; set; }
 
         //public string UserID { get; set; } 
