@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<ZipNTuck.Data.EF.ArticlesOfClothing>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inactive";
 }
 
 <h2>@ViewBag.Title</h2>
 
 <div class="row" style="margin-bottom:1em;">
+    @*<div class="col-md-6">
+        @Html.ActionLink("Add new Item", "Create", "ArticlesOfClothing", null, new { @class = "btn btn-primary" })
+    </div>*@
     <div class="col-md-6">
-        @Html.ActionLink("Add new Item", "Create", "ArticlesOfClothing", new { @class = "btn btn-primary" })
-    </div>
-    <div class="col-md-6">
-        @Html.ActionLink("View Inactive", "Inactive", "ArticlesOfClothing", new { @class = "btn btn-secondary" })
+        @Html.ActionLink("View Active", "Index", "ArticlesOfClothing", new { @class = "btn btn-secondary" })
     </div>
 </div>
 
@@ -91,3 +91,5 @@
     }
 
 </table>
+
+

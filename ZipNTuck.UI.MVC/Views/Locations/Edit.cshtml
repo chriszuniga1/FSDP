@@ -4,13 +4,17 @@
     ViewBag.Title = "Edit";
 }
 
+@if (User.IsInRole("Admin"))
+{
+
+
 <h2>Edit</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Location</h4>
         <hr />
@@ -79,4 +83,10 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+}
+}
+else
+{
+    <h1>Access Denied</h1>
+    <p>You are not allowed to view this page.</p>
 }

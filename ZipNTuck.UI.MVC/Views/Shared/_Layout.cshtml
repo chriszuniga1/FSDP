@@ -53,33 +53,25 @@
                                 <ul id="navigation">
 
                                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-
                                     <li>@Html.ActionLink("About Us", "About", "Home")</li>
-
-
                                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
 
-                                    @if (User.IsInRole("Admin") && Request.IsAuthenticated)
+                                    @if (User.IsInRole("Admin"))
                                     {
                                         <li>
                                             <ul>
-                                                <li><a href="@Url.Action("Index", "UsersAdmin")">User Admin</a></li>
-                                                <li><a href="@Url.Action("Index", "RolesAdmin")">Roles Admin</a></li>
+                                                <li><a href="@Url.Action("Index", "UsersAdmin")">User List</a></li>
+                                                <li><a href="@Url.Action("Index", "RolesAdmin")">User Roles</a></li>
+                                                <li><a href="@Url.Action("Index", "UserDetails")">Customers</a></li>
+                                                <li><a href="@Url.Action("Index", "Locations")">Locations</a></li>
                                             </ul>
                                         </li>
                                     }
 
-                                    @if ((User.IsInRole("Admin") || User.IsInRole("Employee") && Request.IsAuthenticated))
+                                    @if (User.IsInRole("Admin") || User.IsInRole("Customer") || User.IsInRole("Employee"))
                                     {
-                                        <li>
-                                            @*<span class="opener">Admin & Employee Features</span>*@
-                                            <ul>
-                                                <li><a href="@Url.Action("Index", "ArticlesOfClothings")">Customer Items</a></li>
-                                                <li><a href="@Url.Action("Index", "Locations")">Location</a></li>
-                                                <li><a href="@Url.Action("Index", "Reservations")">Reservation</a></li>
-                                                <li><a href="@Url.Action("Index", "UserDetails")">Customer Details</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="@Url.Action("Index", "Reservations")">Reservation</a></li>
+                                        <li><a href="@Url.Action("Index", "ArticlesOfClothings")">Customer Items</a></li>
                                     }
 
                                     @Html.Partial("_LoginPartial")
@@ -88,7 +80,7 @@
                         </div>
                         <!-- left Btn -->
                         <div class="header-right-btn f-right d-none d-lg-block  ml-30">
-                            <a href="@Url.Action("Contact", "Home")" class="header-btn">Visit Us</a> 
+                            <a href="@Url.Action("Contact", "Home")" class="header-btn">Visit Us</a>
                         </div>
                     </div>
                     <!-- Mobile Menu -->
@@ -119,21 +111,20 @@
                                     <div class="footer-tittle">
                                         <div class="footer-pera">
                                             <p>
-                                                Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing.
+                                                If you rip it, we can fix it.
                                             </p>
                                         </div>
                                         <ul class="mb-40">
-                                            <li class="number"><a href="#">(80) 783 367-3904</a></li>
-                                            <li class="number2"><a href="#">(80) 783 367-3904</a></li>
+                                            <li class="number"><a href="#">(800) 867-5309</a></li>
+                                            <li class="number2"><a href="#">(800) 777-9311</a></li>
                                         </ul>
                                     </div>
                                     <!-- social -->
-                                    <div class="footer-social">
+                                    @*<div class="footer-social">
                                         <a href="#"><i class="fab fa-twitter"></i></a>
                                         <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
                                         <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    </div>
+                                    </div>*@
                                 </div>
                             </div>
                         </div>
@@ -144,8 +135,8 @@
                                     <ul>
                                         <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                                         <li><a href="@Url.Action("About", "Home")">About</a></li>
-                                        <li><a href="#">Services</a></li>
-                                        <li><a href="#">Blog</a></li>
+                                        @*<li><a href="#">Services</a></li>
+                                        <li><a href="#">Blog</a></li>*@
                                         <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
                                     </ul>
                                 </div>
@@ -164,7 +155,7 @@
                                     <p>
                                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         Copyright &copy;
-                                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib, Edited by Christina Zuniga</a>
                                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     </p>
                                 </div>

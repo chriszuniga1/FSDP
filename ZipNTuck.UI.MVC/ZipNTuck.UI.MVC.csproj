@@ -186,6 +186,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\UploadUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\animate.min.css" />
@@ -296,6 +297,7 @@
     <Content Include="Content\assets\img\logo\needle2.jpg" />
     <Content Include="Content\assets\img\logo\needlethread.jpg" />
     <Content Include="Content\assets\img\logo\sewingmachine.png" />
+    <Content Include="Content\assets\img\noimage.png" />
     <Content Include="Content\assets\img\post\next.png" />
     <Content Include="Content\assets\img\post\post_1.png" />
     <Content Include="Content\assets\img\post\post_10.png" />
@@ -789,9 +791,12 @@
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Reservations\OverBooked.cshtml" />
+    <Content Include="Views\ArticlesOfClothings\Inactive.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\clothingimg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

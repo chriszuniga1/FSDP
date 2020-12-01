@@ -5,10 +5,13 @@
 }
 
 <h2>Index</h2>
-
+@if (User.IsInRole("Admin"))
+{
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -35,7 +38,8 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.LocationName)
+            <a href="@Url.Action("Index", "Reservations", new {location = item.LocationID })">@Html.DisplayFor(modelItem => item.LocationName)</a>
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Address)
@@ -53,9 +57,13 @@
             @Html.DisplayFor(modelItem => item.ReservationLimit)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LocationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LocationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LocationID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.LocationID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.LocationID }) |
+
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Delete", "Delete", new { id = item.LocationID })
+            }
         </td>
     </tr>
 }

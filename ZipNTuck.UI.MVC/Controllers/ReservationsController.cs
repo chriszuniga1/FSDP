@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ZipNTuck.Data.EF;
+using Microsoft.AspNet.Identity;
 
 namespace ZipNTuck.UI.MVC.Controllers
 {
@@ -17,8 +18,25 @@ namespace ZipNTuck.UI.MVC.Controllers
         // GET: Reservations
         public ActionResult Index()
         {
-            var reservations = db.Reservations.Include(r => r.ArticlesOfClothing).Include(r => r.Location);
-            return View(reservations.ToList());
+            if (User.IsInRole("Customer"))
+            {
+                string currentUser = User.Identity.GetUserId();
+                var customerReservations = db.Reservations.Where(r => r.ArticlesOfClothing.UserID == currentUser);
+                return View(customerReservations.ToList().OrderBy(l => l.Location.LocationName));
+            }
+            var locationID = Request.QueryString["location"];
+
+            if (locationID == null)
+            {
+                var reservations = db.Reservations.Include(r => r.ArticlesOfClothing).Include(r => r.Location);
+                return View(reservations.ToList().OrderBy(l => l.Location.LocationName));
+            }
+            else
+            {
+                var lid = Convert.ToInt32(locationID);
+                var reservations = db.Reservations.Include(r => r.ArticlesOfClothing).Include(r => r.Location).Where(r => r.Location.LocationID == lid);
+                return View(reservations.ToList().OrderBy(l => l.Location.LocationName));
+            }
         }
 
         // GET: Reservations/Details/5
@@ -53,8 +71,24 @@ namespace ZipNTuck.UI.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Reservations.Add(reservation);
-                db.SaveChanges();
+                int nbrReservation = db.Reservations.Where(r => r.ReservationDate == reservation.ReservationDate && r.LocationID == reservation.LocationID).Count();
+                Location locationReservation = db.Locations.Find(reservation.LocationID);
+
+                if (locationReservation.ReservationLimit > nbrReservation)
+                {
+                    db.Reservations.Add(reservation);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    if (locationReservation.ReservationLimit <= nbrReservation && User.IsInRole("Admin"))
+                    {
+                        db.Reservations.Add(reservation);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    return View("OverBooked");
+                }
                 return RedirectToAction("Index");
             }
 

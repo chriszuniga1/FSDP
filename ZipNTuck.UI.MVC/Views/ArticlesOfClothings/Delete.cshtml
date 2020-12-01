@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "Delete";
 }
+@if (User.IsInRole("Admin"))
+{
+
 
 <h2>Delete</h2>
 
@@ -24,7 +27,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ArticlePhoto)
+            @*@Html.DisplayFor(model => model.ArticlePhoto)*@
+            <img src="~/Content/clothingimg/@Model.ArticlePhoto"/>
         </dd>
 
         <dt>
@@ -61,7 +65,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
@@ -70,3 +75,9 @@
         </div>
     }
 </div>
+}
+else
+{
+    <h1>Access Denied</h1>
+    <p>You do not have authorization to view this page</p>
+}        

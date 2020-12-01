@@ -17,7 +17,7 @@ namespace ZipNTuck.UI.MVC.Controllers
         // GET: Locations
         public ActionResult Index()
         {
-            return View(db.Locations.ToList());
+            return View(db.Locations.ToList().OrderBy(l => l.LocationName));
         }
 
         // GET: Locations/Details/5

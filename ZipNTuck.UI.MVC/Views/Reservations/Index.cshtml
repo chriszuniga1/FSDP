@@ -20,6 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Location.LocationName)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticlesOfClothing.UserDetail.FullName)
+        </th>
         <th></th>
     </tr>
 
@@ -35,9 +38,18 @@
             @Html.DisplayFor(modelItem => item.Location.LocationName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReservationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReservationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReservationID })
+            @Html.DisplayFor(modelItem => item.ArticlesOfClothing.UserDetail.FullName)
+        </td>
+
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.ReservationID }) |
+
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReservationID }) @:|
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReservationID })
+            }
+
         </td>
     </tr>
 }
