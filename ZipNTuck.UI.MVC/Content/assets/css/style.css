@@ -2765,7 +2765,8 @@ hr {
 
 .main-header {
     position: relative;
-    z-index: 3
+    z-index: 3;
+    background-color: #f5e6d7
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -2800,7 +2801,7 @@ hr {
 .main-header .main-menu ul ul.submenu {
     position: absolute;
     width: 170px;
-    background: #fff;
+    background: #f5e6d7;
     left: 0;
     top: 120%;
     visibility: hidden;

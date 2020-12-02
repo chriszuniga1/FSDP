@@ -110,6 +110,7 @@ namespace ZipNTuck.UI.MVC.Controllers
                     string currentUserID = User.Identity.GetUserId();
                     articlesOfClothing.UserID = currentUserID;
                     articlesOfClothing.DateAdded = DateTime.Today;
+                    articlesOfClothing.IsActive = true;
                 }
                 db.ArticlesOfClothings.Add(articlesOfClothing);
                 db.SaveChanges();
@@ -165,7 +166,7 @@ namespace ZipNTuck.UI.MVC.Controllers
                             file = Guid.NewGuid() + ext;
 
                             #region Resize Image
-                            string savePath = Server.MapPath("~/Content/imgstore/books/");
+                            string savePath = Server.MapPath("~/Content/clothingimg/");
 
                             Image convertedImage = Image.FromStream(clothingImage.InputStream);
 

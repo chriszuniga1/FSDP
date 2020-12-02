@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -169,6 +175,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesOfClothingsController.cs" />
+    <Compile Include="Controllers\FiltersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -293,11 +300,8 @@
     <Content Include="Content\assets\img\logo\logo.png" />
     <Content Include="Content\assets\img\logo\logo.svg" />
     <Content Include="Content\assets\img\logo\logo2_footer.png" />
-    <Content Include="Content\assets\img\logo\needle.jpg" />
     <Content Include="Content\assets\img\logo\needle2.jpg" />
-    <Content Include="Content\assets\img\logo\needlethread.jpg" />
     <Content Include="Content\assets\img\logo\sewingmachine.png" />
-    <Content Include="Content\assets\img\noimage.png" />
     <Content Include="Content\assets\img\post\next.png" />
     <Content Include="Content\assets\img\post\post_1.png" />
     <Content Include="Content\assets\img\post\post_10.png" />
@@ -338,6 +342,8 @@
     <Content Include="Content\assets\js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="Content\assets\js\waypoints.min.js" />
     <Content Include="Content\assets\js\wow.min.js" />
+    <Content Include="Content\clothingimg\noimage.png" />
+    <Content Include="Content\clothingimg\sewingmachine.png" />
     <Content Include="Content\Doc\css\font-awesome.min.css" />
     <Content Include="Content\Doc\css\main.css" />
     <Content Include="Content\Doc\css\normalize.min.css" />
@@ -391,6 +397,7 @@
     <Content Include="Content\Doc\syntax-highlighter\styles\shThemeMDUltra.css" />
     <Content Include="Content\Doc\syntax-highlighter\styles\shThemeMidnight.css" />
     <Content Include="Content\Doc\syntax-highlighter\styles\shThemeRDark.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -793,10 +800,10 @@
     <Content Include="Views\Locations\Index.cshtml" />
     <Content Include="Views\Reservations\OverBooked.cshtml" />
     <Content Include="Views\ArticlesOfClothings\Inactive.cshtml" />
+    <Content Include="Views\Filters\ReservationClientSide.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\clothingimg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

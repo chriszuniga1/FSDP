@@ -18,7 +18,7 @@
                                     We can fix anything...almost anything
                                 </p>
                                 <!-- Hero Btn -->
-                                <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".8s">Our Services</a>
+                                <a href="@Url.Action("Register", "Account")" class="btn" data-animation="fadeInLeft" data-delay=".8s">Our Services</a>
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,8 @@
             </div>
             <!-- Single Slider -->
             <div class="single-slider position-relative hero-overly slider-height  d-flex align-items-center" data-background="/Content/assets/img/hero/h1_hero.png">
-                <div class="container">
+
+                @*<div class="container">
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="hero-caption">
@@ -41,12 +42,14 @@
                                     Suspendisse varius enim in eros elementum tristique. Duis
                                     cursus, mi quis viverra ornare.
                                 </p>
-                                <!-- Hero Btn -->
+
+                                
                                 <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".8s">Our Services</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
+
                 <!-- Left img -->
                 <div class="hero-img">
                     <img src="~/Content/assets/img/hero/h1_hero1.png" alt="" data-animation="fadeInRight" data-transition-duration="5s">
@@ -55,7 +58,8 @@
         </div>
     </div>
     <!-- slider Area End-->
-    <!--? Clients Offers Start -->
+    <!--Clients Offers Start -->
+    <!--Links set up to go to Register page, can be modified for service page-->
     <div class="clients-area section-padding40">
         <div class="container">
             <div class="row">
@@ -66,7 +70,7 @@
                         </div>
                         <div class="offers-cap">
                             <span>1</span>
-                            <h3><a href="services.html">Clothing Repair</a></h3>
+                            <h3><a href="@Url.Action("Register", "Account")">Clothing Repair</a></h3>
                             <p>If you you ripped it we can fix it.</p>
                         </div>
                     </div>
@@ -78,7 +82,7 @@
                         </div>
                         <div class="offers-cap">
                             <span>2</span>
-                            <h3><a href="services.html">Alterations</a></h3>
+                            <h3><a href="@Url.Action("Register", "Account")">Alterations</a></h3>
                             <p>We can alter those hems and resize most garments.</p>
                         </div>
                     </div>
@@ -90,7 +94,7 @@
                         </div>
                         <div class="offers-cap">
                             <span>3</span>
-                            <h3><a href="services.html">Custom Tailoring</a></h3>
+                            <h3><a href="@Url.Action("Register", "Account")">Custom Tailoring</a></h3>
                             <p>Why fix it when we can make you a new one.</p>
                         </div>
                     </div>

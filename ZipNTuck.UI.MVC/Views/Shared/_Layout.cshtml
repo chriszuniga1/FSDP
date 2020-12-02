@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="~/Content/assets/css/slick.css">
     <link rel="stylesheet" href="~/Content/assets/css/nice-select.css">
     <link rel="stylesheet" href="~/Content/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--DataTable Links-->
+    <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css" rel="stylesheet" />
+
 </head>
 <body>
     <!-- ? Preloader Start -->
@@ -42,19 +48,15 @@
         <div class="header-area header_area">
             <div class="main-header">
                 <div class="header-bottom header-sticky">
-                    <!-- Logo -->
-                    <div class="logo">
-                        <a href="@Url.Action("Index", "Home")"><img src="~/Content/assets/img/logo/sewingmachine.png" alt=""></a>
-                    </div>
+
                     <div class="header-left  d-flex f-right align-items-center">
                         <!-- Main-menu -->
                         <div class="main-menu f-right d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-
-                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                                    <li><a class="btn btn-info fa fa-home" href="@Url.Action("Index","Home")">Home</a></li>
+                                    <li><a class="btn btn-info fa fa-scissors" href="@Url.Action("About","Home")">About Us</a></li>
+                                    <li><a class="btn btn-info fa fa-envelope" href="@Url.Action("Contact","Home")">Contact Us</a></li>
 
                                     @if (User.IsInRole("Admin"))
                                     {
@@ -67,20 +69,14 @@
                                             </ul>
                                         </li>
                                     }
-
                                     @if (User.IsInRole("Admin") || User.IsInRole("Customer") || User.IsInRole("Employee"))
                                     {
-                                        <li><a href="@Url.Action("Index", "Reservations")">Reservation</a></li>
                                         <li><a href="@Url.Action("Index", "ArticlesOfClothings")">Customer Items</a></li>
+                                        <li><a href="@Url.Action("Index", "Reservations")">Reservation</a></li>
                                     }
-
                                     @Html.Partial("_LoginPartial")
                                 </ul>
                             </nav>
-                        </div>
-                        <!-- left Btn -->
-                        <div class="header-right-btn f-right d-none d-lg-block  ml-30">
-                            <a href="@Url.Action("Contact", "Home")" class="header-btn">Visit Us</a>
                         </div>
                     </div>
                     <!-- Mobile Menu -->
@@ -119,12 +115,6 @@
                                             <li class="number2"><a href="#">(800) 777-9311</a></li>
                                         </ul>
                                     </div>
-                                    <!-- social -->
-                                    @*<div class="footer-social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    </div>*@
                                 </div>
                             </div>
                         </div>
@@ -135,8 +125,6 @@
                                     <ul>
                                         <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                                         <li><a href="@Url.Action("About", "Home")">About</a></li>
-                                        @*<li><a href="#">Services</a></li>
-                                        <li><a href="#">Blog</a></li>*@
                                         <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
                                     </ul>
                                 </div>
@@ -213,6 +201,20 @@
     <script src="~/Content/assets/js/plugins.js"></script>
     <script src="~/Content/assets/js/main.js"></script>
 
+    <!-- Datatbale-->
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+
+
     @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $('.display').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
 </body>
 </html>

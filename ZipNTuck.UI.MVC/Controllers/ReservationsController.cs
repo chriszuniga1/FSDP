@@ -57,7 +57,17 @@ namespace ZipNTuck.UI.MVC.Controllers
         // GET: Reservations/Create
         public ActionResult Create()
         {
-            ViewBag.ArticleID = new SelectList(db.ArticlesOfClothings, "ArticleID", "ArticleName");
+            if (User.IsInRole("Customer"))
+            {
+            string currentUser = User.Identity.GetUserId();
+            ViewBag.ArticleID = new SelectList(db.ArticlesOfClothings.Where(x=>x.UserID==currentUser), "ArticleID", "ArticleName");
+            }
+            else
+            {
+                ViewBag.ArticleID = new SelectList(db.ArticlesOfClothings, "ArticleID", "ArticleName");
+            }
+            
+
             ViewBag.LocationID = new SelectList(db.Locations, "LocationID", "LocationName");
             return View();
         }

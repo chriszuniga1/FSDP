@@ -1,24 +1,29 @@
 ﻿@model IEnumerable<ZipNTuck.Data.EF.ArticlesOfClothing>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of Customer Items";
 }
 
 <h2>@ViewBag.Title</h2>
 
-<div class="row" style="margin-bottom:1em;">
-    <div class="col-md-6">
+@if (User.IsInRole("Admin"))
+{
+    <div class="row" style="margin-bottom:1em;">
+
+        <div class="col-sm-4">
+            @Html.ActionLink("View Inactive", "Inactive", "ArticlesOfClothing", new { @class = "btn btn-primary" })
+        </div>
+    </div>
+}
+
+@if (User.IsInRole("Customer") || User.IsInRole("Admin"))
+{
+    <div class="col-sm-8">
         @Html.ActionLink("Add new Item", "Create", "ArticlesOfClothing", new { @class = "btn btn-primary" })
     </div>
-    <div class="col-md-6">
-        @Html.ActionLink("View Inactive", "Inactive", "ArticlesOfClothing", new { @class = "btn btn-secondary" })
-    </div>
-</div>
+}
 
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <table class="table">
     <tr>
         <th>
@@ -32,7 +37,7 @@
             @Html.DisplayNameFor(model => model.SpecialNotes)
         </th>
 
-        @if (User.IsInRole("Admin"))
+        @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
         {
             <th>
                 @Html.DisplayNameFor(model => model.IsActive)
@@ -63,7 +68,7 @@
                 @Html.DisplayFor(modelItem => item.SpecialNotes)
             </td>
 
-            @if (User.IsInRole("Admin"))
+            @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
             {
                 <td>
                     @Html.DisplayFor(modelItem => item.IsActive)
